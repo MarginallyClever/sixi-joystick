@@ -46,7 +46,10 @@ void loop() {
     f = (float)analogRead(j)/1024.0;
     f = f * RANGE + RANGE_MIN;
     f -= MIDPOINT;
-    if(i==1) f=-f;
+    
+    // invert some axies?
+    if(i==4) f=-f;
+    
     // average samples
     sum=0;
     for(k=0;k<NUM_AVERAGE-1;++k) {
